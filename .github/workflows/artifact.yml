@@ -32,4 +32,4 @@ jobs:
              mkdir ./artifacts
              mv hello.txt ./artifacts/hello.txt
       - name: display
-        run: cat hello.txt
+        run: cat ./artifacts/hello.txt
