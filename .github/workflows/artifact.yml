@@ -17,6 +17,9 @@ jobs:
           path: hello.txt
   download: #added
     needs: build
+    concurrency: 
+      group: prd
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
       - name: Download text file
