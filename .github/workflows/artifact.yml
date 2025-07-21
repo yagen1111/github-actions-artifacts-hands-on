@@ -16,6 +16,7 @@ jobs:
           name: hello-artifact
           path: hello.txt
   download: #added
+    timeout-minutes: 1
     needs: build
     concurrency: 
       group: prd
@@ -28,6 +29,7 @@ jobs:
           name: hello-artifact
           path: ./artifacts
       - name: Display content of the text file
+        timeout-minutes: 1
         run: |
              cat ./artifacts/hello.txt
-             sleep 600s
+             sleep 6000s
