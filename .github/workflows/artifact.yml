@@ -23,13 +23,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: download text
+      - name: download text file
         uses: actions/download-artifact@v4
         with:
           name: hello-artifact
-      - name: add to path
-        run: |
-             mkdir ./artifacts
-             mv hello.txt ./artifacts/hello.txt
+          path: ./artifact
       - name: display
         run: cat ./artifacts/hello.txt
